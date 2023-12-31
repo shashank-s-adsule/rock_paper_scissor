@@ -1,0 +1,209 @@
+<!-- stone paper scesior game -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>stone paper scesior</title>
+
+        <!-- CSS part -->
+        <style>
+            p{
+                color: white;
+                font-weight: bold;
+            }
+            footer p{
+                font-weight: 100;
+                font-size: small;
+            }
+            .stat
+            {
+                color: orange;
+            }
+            body{
+                background-color: rgb(50, 50, 50) ;
+            }
+            header{
+                background-color: rgb(225, 100, 0);
+            }
+            .display
+            {
+                background-color: rgb(80, 80, 80);
+                margin: 100px 50px 100px 50px;
+                /* padding-top: 250px; */
+                display: flex;
+                justify-content: space-around;
+                /* align-items: center; */
+                
+
+                /* user display */
+                .left
+                {
+                    /* .user_options
+                    {
+                        display: flex;
+                        justify-content: space-between;
+                    } */
+                    button
+                    {
+                        img{
+                            height: 10%;
+                            width: 10%;
+                        }
+                    }
+                }
+                
+                /* counter display */
+                .counter
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    .user span,.computer span
+                    {
+                        color: white;
+                        font-weight: bold;
+                        display: flex;
+                        font-size: 180%;
+                    }
+                    #user,#computer
+                    {
+                        color: white;
+                        font-size: 500%;
+                    }
+                }
+                .reset{
+                    /* make fit to  display*/
+                }
+                button
+                {
+                    color: orange;
+                    background-color: rgb(70, 70, 70);
+                }
+            }
+        </style>
+        <!-- CSS end -->
+    </head>
+
+    <body>
+        <header>
+            <p class="nav">a b c d</p>
+        </header>
+        <main >
+            <!-- <p> put counter hear</p>
+            <p>and add images</p>
+            <br> -->
+            <div class="display">
+                <div class="left">
+                    <div class="user_options">
+                        <button id="rock" data=0><img src=".stone(orange).png" alt="Rock"></button>
+                        <button id="paper" data=1><img src=".paper(orange).png" alt="Paper"></button>
+                        <button id="scissors" data=2><img src=".scissor(orange).png" alt="Scissor"></button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="counter">
+                        <div class="user">
+                            <span>user</span>
+                            <label id="user">0</label>
+                        </div>
+                        <div class="computer">
+                            <span>computer</span>
+                            <label id="computer">0</label>
+                        </div>
+                    </div>
+                    <div>
+                        <textarea id="output" cols="30" rows="3"></textarea>
+                    </div>
+                    <div class="reset">
+                        <button id="reset"> reset</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!--script part-->
+        <script>            
+            let user_cnt=0, computer_cnt=0;
+    
+            document.getElementById("rock").onclick=function()
+            {
+                let computer_option= Math.floor(Math.random()*100)%3;
+                let x=(this.getAttribute("data")-'0');
+                if(x==computer_option)
+                {
+                    document.getElementById("output").innerHTML="draw";
+                }
+                else if(computer_option==1)
+                {
+                    computer_cnt+=1
+                    document.getElementById("computer").innerHTML=computer_cnt;
+                    document.getElementById("output").innerHTML="computer won";
+                }
+                else
+                {
+                    user_cnt+=1
+                    document.getElementById("user").innerHTML=user_cnt;
+                    document.getElementById("output").innerHTML="user won";
+                }
+            }
+            document.getElementById("paper").onclick=function()
+            {
+                let computer_option= Math.floor(Math.random()*100)%3;
+                let x=(this.getAttribute("data")-'0');
+                if(x==computer_option)
+                {
+                    document.getElementById("output").innerHTML="draw";
+                }
+                else if(computer_option==2)
+                {
+                    computer_cnt+=1
+                    document.getElementById("computer").innerHTML=computer_cnt;
+                    document.getElementById("output").innerHTML="computer won";
+                }
+                else
+                {
+                    user_cnt+=1
+                    document.getElementById("user").innerHTML=user_cnt;
+                    document.getElementById("output").innerHTML="user won";
+                }
+            }
+            document.getElementById("scissors").onclick=function()
+            {
+                let computer_option= Math.floor(Math.random()*100)%3;
+                let x=(this.getAttribute("data")-'0');
+                if(x==computer_option)
+                {
+                    document.getElementById("output").innerHTML="draw";
+                }
+                else if(computer_option==0)
+                {
+                    computer_cnt+=1
+                    document.getElementById("computer").innerHTML=computer_cnt;
+                    document.getElementById("output").innerHTML="computer won";
+                }
+                else
+                {
+                    user_cnt+=1
+                    document.getElementById("user").innerHTML=user_cnt;
+                    document.getElementById("output").innerHTML="user won";
+                }
+            }
+
+            //reset
+            document.getElementById("reset").onclick=function()
+            {
+                computer_cnt=0;
+                user_cnt=0;
+                document.getElementById("computer").innerHTML=computer_cnt;
+                document.getElementById("user").innerHTML=user_cnt;
+                document.getElementById("output").innerHTML="";
+            }
+            
+        </script>
+            <!--script end-->
+        </main>
+        <footer>
+            <h5>instructions</h5>
+        </footer>
+    </body>
+</html>
