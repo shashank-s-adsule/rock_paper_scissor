@@ -36,7 +36,19 @@
                 {
                     color: black;
                     background-color: var(--header_bg);
+                    button
+                    {
+                        background-color: var(--header_bg);
+                        border: none;
+                        padding: 10px 10px 10px 10px;
+                        img
+                        {
+                            height: 80%;
+                            width: 80%;
+                        }
+                    }
                 }
+                
             }
             .display
             {
@@ -116,8 +128,18 @@
             <div class="HEAD_name">
                 <p class="nav">a b c d</p>
             </div>
+            <!-- COLOR_MODE -->
+            <div class="COLOR_MODE">
+                <select name="color_options" id="color_options">
+                    <option>orange</option>
+                    <option>blue</option>
+                    <option>green</option>
+                    <option>purple</option>
+                </select>
+            </div>
+            <!-- DARK MODE -->
             <div class="BG_MODE">
-                <button id="bg_change"><img src="###" alt="background color change"></button>
+                <button id="bg_change"><img src=".\raw_img\sun.png" alt="background color change"></button>
             </div>
 
 
@@ -162,10 +184,33 @@
 
             <!-- script for header part -->
         <script>
+            // DARK MODE function
+            let bg_flag=true;
             document.getElementById("bg_change").onclick=function()
             {
-                document.body.style.backgroundColor="#FFFFFF";
+                if(bg_flag)
+                {
+                    document.documentElement.style.setProperty("--main_bg","#323232"); //rgb(50,50,50)
+                    document.documentElement.style.setProperty("--display_bg","#505050"); //rgb(80,80,80)
+                    document.documentElement.style.setProperty("--counter_color","#FFFFFF"); //rgb(255,255,255)
+                    document.documentElement.style.setProperty("--button_bg","#464646"); //rgb(70,70,70)
+                }
+                else
+                {
+                    document.documentElement.style.setProperty("--main_bg","#FFFFFF"); 
+                    document.documentElement.style.setProperty("--display_bg","#FFFFFF");
+                    document.documentElement.style.setProperty("--counter_color","#000000"); //rgb(0,0,0)
+                    document.documentElement.style.setProperty("--button_bg","#FFFFFF"); 
+                }
+                bg_flag=!bg_flag;
             }
+            // COLOR MODE function
+            // let color_flag=0;
+            // document.getElementById("color_options").click=function()
+            // {
+
+            // }
+
         </script>
             <!-- script for header end -->
 
