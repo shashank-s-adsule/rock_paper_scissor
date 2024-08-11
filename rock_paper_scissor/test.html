@@ -1,0 +1,82 @@
+<!-- stone paper scesior game -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>stone paper scesior</title>
+        
+        <!-- CSS part -->
+        <link rel="stylesheet" href=".\\style.css">
+        
+    </head>
+    
+    <body>
+        <header>
+            <div class="HEAD_name">
+                <p class="nav">a b c d</p>
+            </div>
+            <!-- COLOR_MODE -->
+            <div class="COLOR_MODE">
+                <select name="color_options" id="color_options">
+                    <option >orange</option>
+                    <option>blue</option>
+                    <option>green</option>
+                    <option>purple</option>
+                </select>
+            </div>
+            <!-- DARK MODE -->
+            <div class="BG_MODE">
+                <button id="bg_change"><img src="..\raw_img\sun.png" alt="background color change"></button>
+            </div>
+
+
+        </header>
+        <main >
+            <!-- <p> put counter hear</p>
+            <p>and add images</p>
+            <br> -->
+            <div class="display">
+                <div class="left">
+                    <div class="user_options">
+                        <div class="ROCK">
+                            <button id="rock" data=0><img src="..\resource\stone(orange).png" alt="Rock"></button>
+                        </div>
+                        <div class="PAPER">
+                            <button id="paper" data=1><img src="..\resource\paper(orange).png" alt="Paper"></button>
+                        </div>
+                        <div class="SCISSOR">
+                            <button id="scissors" data=2><img src="..\resource\scissor(orange).png" alt="Scissor"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="counter">
+                        <div class="user">
+                            <span>user</span>
+                            <label id="user">0</label>
+                        </div>
+                        <div class="computer">
+                            <span>computer</span>
+                            <label id="computer">0</label>
+                        </div>
+                    </div>
+                    <div>
+                        <textarea id="output" cols="15" rows="1"></textarea>
+                    </div>
+                    <div class="RESET">
+                        <button id="reset"> reset</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- script.js link -->
+            <script src=".\script.js"></script>
+
+        </main>
+        <!-- <footer>
+            <h5>instructions</h5>
+        </footer> -->
+    </body>
+</html>
