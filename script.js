@@ -22,11 +22,25 @@ document.getElementById("bg_change").onclick=function()
 }
 
 // COLOR MODE function
-// let color_flag=0;
-// document.getElementById("color_options").click=function()
-// {
-
-// }
+document.getElementById("color_options").addEventListener("change",function()
+{
+    let color=this.value;
+    switch(color)
+    {
+        case "orange":
+            document.documentElement.style.setProperty("--header_bg","#ff6400");
+            break;
+        case "blue":
+            document.documentElement.style.setProperty("--header_bg","#3838E4");            //better
+            break;
+        case "green":
+            document.documentElement.style.setProperty("--header_bg","#008000");
+            break;
+        case "purple":
+            document.documentElement.style.setProperty("--header_bg","#800080");
+            break;
+    }
+});
 
 
 // ROCK_PAPER_SCICCSOR button functions
