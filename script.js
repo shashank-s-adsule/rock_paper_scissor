@@ -25,22 +25,36 @@ document.getElementById("bg_change").onclick=function()
 document.getElementById("color_options").addEventListener("change",function()
 {
     let color=this.value;
+    let image_element=document.querySelectorAll("#user_choice img");
+    
     switch(color)
     {
         case "orange":
-            document.documentElement.style.setProperty("--header_bg","#ff6400");
-            document.documentElement.style.setProperty("--text_color","#ffa500");
+            document.documentElement.style.setProperty("--header_bg","#ff6400");                                                //for header
+            image_element.forEach(x=>{
+                x.style.filter="invert(58%) sepia(16%) saturate(5312%) hue-rotate(342deg) brightness(104%) contrast(101%)";     //for option buttons
+            });
+            document.documentElement.style.setProperty("--text_color","#ffa500");                                               //for text
             break;
         case "blue":
             document.documentElement.style.setProperty("--header_bg","#3838E4");            //better
+            image_element.forEach(x=>{
+                x.style.filter="invert(55%) sepia(74%) saturate(5082%) hue-rotate(222deg) brightness(101%) contrast(101%)";
+            });
             document.documentElement.style.setProperty("--text_color","#8181FF");
             break;
         case "green":
             document.documentElement.style.setProperty("--header_bg","#008000");
+            image_element.forEach(x=>{
+                x.style.filter="invert(54%) sepia(34%) saturate(746%) hue-rotate(71deg) brightness(96%) contrast(87%)";
+            });
             document.documentElement.style.setProperty("--text_color","#4CA64C");
             break;
         case "purple":
             document.documentElement.style.setProperty("--header_bg","#800080");
+            image_element.forEach(x=>{
+                x.style.filter="invert(82%) sepia(12%) saturate(3194%) hue-rotate(216deg) brightness(81%) contrast(82%)";
+            });
             document.documentElement.style.setProperty("--text_color","#C081C0");
             break;
     }
