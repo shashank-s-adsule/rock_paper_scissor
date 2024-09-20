@@ -32,76 +32,35 @@ document.getElementById("bg_change").onclick=function()
 // ROCK_PAPER_SCICCSOR button functions
 let user_cnt=0, computer_cnt=0;                                 // 0->rock ,1->paper, 2->scissor
 
-document.getElementById("rock").onclick=function()
-{
-    let computer_option= Math.floor(Math.random()*100)%3;
-    let x=(this.getAttribute("data")-'0');
-    if(x==computer_option)
+document.querySelectorAll("#user_choice").forEach(button =>{                        
+    button.onclick= function()
     {
-        document.getElementById("output").innerHTML="draw";
+        let computer_option= Math.floor(Math.random()*100)%3;
+        let x=parseInt(this.getAttribute("data"));
+        
+        if(x==computer_option)
+            {
+                document.getElementById("output").innerHTML="draw";
+            }
+        else if((computer_option==0 && x==2) ||(computer_option==1 && x==0) ||(computer_option==2 && x==1))
+        {
+            computer_cnt+=1
+            document.getElementById("computer").innerHTML=computer_cnt;
+            document.getElementById("output").innerHTML="computer won";
+        }
+        else
+        {
+            user_cnt+=1
+            document.getElementById("user").innerHTML=user_cnt;
+            document.getElementById("output").innerHTML="user won";
+        }
     }
-    else if(computer_option==1)
-    {
-        computer_cnt+=1
-        document.getElementById("computer").innerHTML=computer_cnt;
-        document.getElementById("output").innerHTML="computer won";
-    }
-    else
-    {
-        user_cnt+=1
-        document.getElementById("user").innerHTML=user_cnt;
-        document.getElementById("output").innerHTML="user won";
-    }
-}
-document.getElementById("paper").onclick=function()
-{
-    let computer_option= Math.floor(Math.random()*100)%3;
-    let x=(this.getAttribute("data")-'0');
-    if(x==computer_option)
-    {
-        document.getElementById("output").innerHTML="draw";
-    }
-    else if(computer_option==2)
-    {
-        computer_cnt+=1
-        document.getElementById("computer").innerHTML=computer_cnt;
-        document.getElementById("output").innerHTML="computer won";
-    }
-    else
-    {
-        user_cnt+=1
-        document.getElementById("user").innerHTML=user_cnt;
-        document.getElementById("output").innerHTML="user won";
-    }
-}
-document.getElementById("scissors").onclick=function()
-{
-    let computer_option= Math.floor(Math.random()*100)%3;
-    let x=(this.getAttribute("data")-'0');
-    if(x==computer_option)
-    {
-        document.getElementById("output").innerHTML="draw";
-    }
-    else if(computer_option==0)
-    {
-        computer_cnt+=1
-        document.getElementById("computer").innerHTML=computer_cnt;
-        document.getElementById("output").innerHTML="computer won";
-    }
-    else
-    {
-        user_cnt+=1
-        document.getElementById("user").innerHTML=user_cnt;
-        document.getElementById("output").innerHTML="user won";
-    }
-}
+});
 
 //RESET SCORE function 
 document.getElementById("reset").onclick=function()
 {
-    computer_cnt=0;
-    user_cnt=0;
-    document.getElementById("computer").innerHTML=computer_cnt;
-    document.getElementById("user").innerHTML=user_cnt;
+    document.getElementById("computer").innerHTML=0;
+    document.getElementById("user").innerHTML=0;
     document.getElementById("output").innerHTML="";
 }
