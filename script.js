@@ -29,15 +29,19 @@ document.getElementById("color_options").addEventListener("change",function()
     {
         case "orange":
             document.documentElement.style.setProperty("--header_bg","#ff6400");
+            document.documentElement.style.setProperty("--text_color","#ffa500");
             break;
         case "blue":
             document.documentElement.style.setProperty("--header_bg","#3838E4");            //better
+            document.documentElement.style.setProperty("--text_color","#8181FF");
             break;
         case "green":
             document.documentElement.style.setProperty("--header_bg","#008000");
+            document.documentElement.style.setProperty("--text_color","#4CA64C");
             break;
         case "purple":
             document.documentElement.style.setProperty("--header_bg","#800080");
+            document.documentElement.style.setProperty("--text_color","#C081C0");
             break;
     }
 });

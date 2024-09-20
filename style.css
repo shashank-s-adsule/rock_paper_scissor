@@ -112,5 +112,6 @@ header{
     {
         color: var(--text_color);
         background-color: var(--button_bg);
+        font-weight: bold;
     }
 }
