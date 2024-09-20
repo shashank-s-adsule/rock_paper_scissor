@@ -5,7 +5,7 @@
     --button_bg: rgb(70,70,70);
     --header_bg: rgb(255,100,0);
     --counter_color: white;
-    --text_color: orange;
+    --text_color: #ffa500;
 }
 
 p{
@@ -66,6 +66,8 @@ header{
             img{
                 height: 10%;
                 width: 10%;
+                /* for image color change */
+                filter: invert(58%) sepia(16%) saturate(5312%) hue-rotate(342deg) brightness(104%) contrast(101%);
             }
         }
     }
