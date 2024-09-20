@@ -1,111 +1,114 @@
 :root
+{
+    --main_bg: rgb(50,50,50);
+    --display_bg: rgb(80,80,80);
+    --button_bg: rgb(70,70,70);
+    --header_bg: rgb(255,100,0);
+    --counter_color: white;
+    --text_color: orange;
+}
+
+p{
+    color: white;
+    font-weight: bold;
+}
+
+footer p{
+    font-weight: 100;
+    font-size: small;
+}
+
+body{
+    background-color: var(--main_bg) ;
+}
+
+header{
+    background-color: var(--header_bg);
+    display: flex;
+
+    .BG_MODE
+    {
+        color: black;
+        background-color: var(--header_bg);
+        button
+        {
+            background-color: var(--header_bg);
+            border: none;
+            padding: 10px 10px 10px 10px;
+            img
             {
-                --main_bg: rgb(50,50,50);
-                --display_bg: rgb(80,80,80);
-                --button_bg: rgb(70,70,70);
-                --header_bg: rgb(255,100,0);
-                --counter_color: white;
-                --text_color: orange;
+                height: 80%;
+                width: 80%;
             }
-            p{
-                color: white;
-                font-weight: bold;
-            }
-            footer p{
-                font-weight: 100;
-                font-size: small;
-            }
-            body{
-                background-color: var(--main_bg) ;
-            }
-            header{
-                background-color: var(--header_bg);
-                display: flex;
+        }
+    }
+}
 
-                .BG_MODE
-                {
-                    color: black;
-                    background-color: var(--header_bg);
-                    button
-                    {
-                        background-color: var(--header_bg);
-                        border: none;
-                        padding: 10px 10px 10px 10px;
-                        img
-                        {
-                            height: 80%;
-                            width: 80%;
-                        }
-                    }
-                }
+.display
+{
+    background-color: var(--display_bg);
+    margin: 100px 50px 100px 50px;
+    /* padding-top: 250px; */
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
                 
+    /* user display */
+    .left
+    {
+        .user_options
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+        button
+        {
+            img{
+                height: 10%;
+                width: 10%;
             }
-            .display
-            {
-                background-color: var(--display_bg);
-                margin: 100px 50px 100px 50px;
-                /* padding-top: 250px; */
-                display: flex;
-                justify-content: space-around;
-                /* align-items: center; */
-                
+        }
+    }
 
-                /* user display */
-                .left
-                {
-                    .user_options
-                    {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                    button
-                    {
-                        img{
-                            height: 10%;
-                            width: 10%;
-                        }
-                    }
-                }
-                
-                /* counter display */
-                .counter
-                {
-                    display: flex;
-                    justify-content: space-between;
-                    
-                    .user span,.computer span
-                    {
-                        color: var(--counter_color);
-                        font-weight: bold;
-                        display: flex;
-                        font-size: 180%;
-                    }
-                    #user,#computer
-                    {
-                        color: var(--counter_color);
-                        font-size: 500%;
-                    }
-                }
-                /* output box display */
-                #output
-                {
-                    font-size: xx-large;
-                    text-align: center;
-                    background-color: var(--display_bg);
-                    color: var(--text_color);
-                }
+    /* counter display */
+    .counter
+    {
+        display: flex;
+        justify-content: space-between;
+        
+        .user span,.computer span
+        {
+            color: var(--counter_color);
+            font-weight: bold;
+            display: flex;
+            font-size: 180%;
+        }
+        #user,#computer
+        {
+            color: var(--counter_color);
+            font-size: 500%;
+        }
+    }
+    /* output box display */
+    #output
+    {
+        font-size: xx-large;
+        text-align: center;
+        background-color: var(--display_bg);
+        color: var(--text_color);
+    }
 
-                /* reset button */
-                .RESET{
-                    display: flex;
-                    .reset{
-                        font-size: larger;
-                        color: red;
-                    }
-                }
-                button
-                {
-                    color: var(--text_color);
-                    background-color: var(--button_bg);
-                }
-            }
+    /* reset button */
+    .RESET{
+        display: flex;
+        .reset{
+            font-size: larger;
+            color: red;
+        }
+    }
+    button
+    {
+        color: var(--text_color);
+        background-color: var(--button_bg);
+    }
+}
