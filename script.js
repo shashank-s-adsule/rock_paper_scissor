@@ -35,10 +35,10 @@ document.getElementById("color_options").addEventListener("change",function()
             break;
         case "purple":
             document.documentElement.style.setProperty("--header_bg","#800080");
-            image_element.forEach(x=>{
-                x.style.filter="invert(82%) sepia(12%) saturate(3194%) hue-rotate(216deg) brightness(81%) contrast(82%)";
-            });
-            document.documentElement.style.setProperty("--text_color","#C081C0");
+                image_element.forEach(x=>{
+                    x.style.filter="invert(64%) sepia(7%) saturate(4726%) hue-rotate(250deg) brightness(70%) contrast(88%)";
+                });
+                document.documentElement.style.setProperty("--text_color","#AD5AAD");
             break;
     }
 });
@@ -54,6 +54,8 @@ document.getElementById("bg_change").onclick=function()
         document.documentElement.style.setProperty("--counter_color","#FFFFFF"); //rgb(255,255,255)
         document.documentElement.style.setProperty("--button_bg","#464646"); //rgb(70,70,70)
 
+        let image=document.getElementById("dark_mode")
+        image.src="./images/sun.png";
     }
     else
     {
@@ -63,6 +65,8 @@ document.getElementById("bg_change").onclick=function()
         document.documentElement.style.setProperty("--counter_color","#000000"); //rgb(0,0,0)
         document.documentElement.style.setProperty("--button_bg",color_map[bg_color][2]); 
         
+        let image=document.getElementById("dark_mode")
+        image.src="./images/moon.png";
     }
     dark_mode=!dark_mode;
 }
