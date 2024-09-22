@@ -1,7 +1,7 @@
 // color variable
 let bg_color="orange"
 let dark_mode=true;
-let color_map={"orange":["#FFEDCC","#FFEDCC","#FFEDCC"],"blue":["#e1e1f0","#c8c8e1","#c8c8e1"],"green":["#DBEDDB","#A5D2A5","#A5D2A5"],"purple":["#E0C1E0","#CC99CC","#CC99CC"]};
+let color_map={"orange":["#FFEDCC","#FFD27F","#FFD27F"],"blue":["#e1e1f0","#c8c8e1","#c8c8e1"],"green":["#DBEDDB","#A5D2A5","#A5D2A5"],"purple":["#E0C1E0","#CC99CC","#CC99CC"]};
 
 // COLOR MODE function
 document.getElementById("color_options").addEventListener("change",function()
@@ -53,6 +53,7 @@ document.getElementById("bg_change").onclick=function()
         document.documentElement.style.setProperty("--display_bg","#505050"); //rgb(80,80,80)
         document.documentElement.style.setProperty("--counter_color","#FFFFFF"); //rgb(255,255,255)
         document.documentElement.style.setProperty("--button_bg","#464646"); //rgb(70,70,70)
+
     }
     else
     {
@@ -61,6 +62,7 @@ document.getElementById("bg_change").onclick=function()
         document.documentElement.style.setProperty("--display_bg",color_map[bg_color][1]); //rgb(200,200,225)
         document.documentElement.style.setProperty("--counter_color","#000000"); //rgb(0,0,0)
         document.documentElement.style.setProperty("--button_bg",color_map[bg_color][2]); 
+        
     }
     dark_mode=!dark_mode;
 }
