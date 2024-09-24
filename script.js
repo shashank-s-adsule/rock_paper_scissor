@@ -46,6 +46,7 @@ document.getElementById("color_options").addEventListener("change",function()
 // DARK MODE function
 document.getElementById("bg_change").onclick=function()
 {
+    let image=document.getElementById("dark_mode")
     if(dark_mode)
     {   
         // dark mode
@@ -53,8 +54,7 @@ document.getElementById("bg_change").onclick=function()
         document.documentElement.style.setProperty("--display_bg","#505050"); //rgb(80,80,80)
         document.documentElement.style.setProperty("--counter_color","#FFFFFF"); //rgb(255,255,255)
         document.documentElement.style.setProperty("--button_bg","#464646"); //rgb(70,70,70)
-
-        let image=document.getElementById("dark_mode")
+        
         image.src="./images/sun.png";
     }
     else
@@ -65,7 +65,6 @@ document.getElementById("bg_change").onclick=function()
         document.documentElement.style.setProperty("--counter_color","#000000"); //rgb(0,0,0)
         document.documentElement.style.setProperty("--button_bg",color_map[bg_color][2]); 
         
-        let image=document.getElementById("dark_mode")
         image.src="./images/moon.png";
     }
     dark_mode=!dark_mode;
@@ -80,10 +79,7 @@ document.querySelectorAll("#user_choice").forEach(button =>{
         let computer_option= Math.floor(Math.random()*100)%3;
         let x=parseInt(this.getAttribute("data"));
         
-        if(x==computer_option)
-            {
-                document.getElementById("output").innerHTML="draw";
-            }
+        if(x==computer_option)  {document.getElementById("output").innerHTML="draw";}
         else if((computer_option==0 && x==2) ||(computer_option==1 && x==0) ||(computer_option==2 && x==1))
         {
             computer_cnt+=1
