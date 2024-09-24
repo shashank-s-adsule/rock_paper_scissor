@@ -1,8 +1,8 @@
 :root
 {
     --main_bg: #323232;
-    --display_bg: rgb(80,80,80);
-    --button_bg: rgb(70,70,70);
+    --display_bg: #505050;
+    --button_bg: #464646;
     --header_bg: rgb(255, 100, 0);
     --counter_color: white;
     --text_color: #ffa500;

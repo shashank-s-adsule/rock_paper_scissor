@@ -38,7 +38,7 @@ document.getElementById("color_options").addEventListener("change",function()
                 image_element.forEach(x=>{
                     x.style.filter="invert(64%) sepia(7%) saturate(4726%) hue-rotate(250deg) brightness(70%) contrast(88%)";
                 });
-                document.documentElement.style.setProperty("--text_color","#AD5AAD");
+            document.documentElement.style.setProperty("--text_color","#AD5AAD");
             break;
     }
 });
