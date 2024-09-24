@@ -37,8 +37,6 @@ header{
             padding: 10px 10px 10px 10px;
             img
             {
-                /* height: 80%; */
-                /* width: 80%; */
                 height: 26px;
                 width: 26px;
             }
@@ -63,6 +61,24 @@ header{
             display: flex;
             justify-content: space-between;
         }
+        .ProcessTab
+        {
+            display: flex;
+            justify-content: center;
+
+            #process_tab
+            {  
+                width: 100%;
+                height: 100%;
+
+                font-size: larger;
+                /* text-align: center; */
+                background-color: var(--display_bg);
+                color: var(--text_color);
+                border: none;
+                resize: none;
+            }
+        }
         button
         {
             img{
@@ -75,45 +91,51 @@ header{
     }
 
     /* counter display */
-    .counter
+    .right
     {
-        display: flex;
-        justify-content: space-between;
-        
-        .user span,.computer span
+        .counter
         {
-            color: var(--counter_color);
-            font-weight: bold;
             display: flex;
-            font-size: 180%;
+            justify-content: space-between;
+            
+            .user span,.computer span
+            {
+                color: var(--counter_color);
+                font-weight: bold;
+                display: flex;
+                font-size: 180%;
+            }
+            #user,#computer
+            {
+                color: var(--counter_color);
+                font-size: 500%;
+            }
         }
-        #user,#computer
+        /* output box display */
+        #output
         {
-            color: var(--counter_color);
-            font-size: 500%;
+            font-size: xx-large;
+            text-align: center;
+            background-color: var(--display_bg);
+            color: var(--text_color);
+            resize: none;
         }
-    }
-    /* output box display */
-    #output
-    {
-        font-size: xx-large;
-        text-align: center;
-        background-color: var(--display_bg);
-        color: var(--text_color);
+    
+        /* reset button */
+        .RESET{
+            display: flex;
+            .reset{
+                font-size: larger;
+                color: red;
+            }
+        }
     }
 
-    /* reset button */
-    .RESET{
-        display: flex;
-        .reset{
-            font-size: larger;
-            color: red;
-        }
-    }
     button
-    {
-        color: var(--text_color);
-        background-color: var(--button_bg);
-        font-weight: bold;
-    }
+        {
+            color: var(--text_color);
+            background-color: var(--button_bg);
+            font-weight: bold;
+            border-radius:0.35cm;
+        }
 }

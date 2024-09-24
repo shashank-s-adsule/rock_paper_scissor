@@ -83,14 +83,17 @@ document.getElementById("bg_change").onclick=function()
 }
 
 // ROCK_PAPER_SCICCSOR button functions
-let user_cnt=0, computer_cnt=0;                                 // 0->rock ,1->paper, 2->scissor
+let user_cnt=0, computer_cnt=0,cnt=1;                                 // 0->rock ,1->paper, 2->scissor
+let choices={0:"Rock",1:"Paper",2:"Scissor"};
 
 document.querySelectorAll("#user_choice").forEach(button =>{                        
     button.onclick= function()
     {
-        let computer_option= Math.floor(Math.random()*100)%3;
+        let computer_option= (Math.floor(Math.random()*100))%3;
         let x=parseInt(this.getAttribute("data"));
-        
+        let curr=`\t${cnt}.\t\tuser: ${choices[x]}\t\t\t\t\tComputer: ${choices[computer_option]}\n`;
+        let process_tab_area=document.getElementById("process_tab");
+
         if(x==computer_option)  {document.getElementById("output").innerHTML="draw";}
         else if((computer_option==0 && x==2) ||(computer_option==1 && x==0) ||(computer_option==2 && x==1))
         {
@@ -104,13 +107,18 @@ document.querySelectorAll("#user_choice").forEach(button =>{
             document.getElementById("user").innerHTML=user_cnt;
             document.getElementById("output").innerHTML="user won";
         }
+
+        process_tab_area.innerHTML=curr+process_tab_area.innerHTML;
+        cnt++;
     }
 });
 
 //RESET SCORE function 
 document.getElementById("reset").onclick=function()
 {
+    user_cnt=0;computer_cnt=0;cnt=1;
     document.getElementById("computer").innerHTML=0;
     document.getElementById("user").innerHTML=0;
     document.getElementById("output").innerHTML="";
+    document.getElementById("process_tab").innerHTML="";
 }
