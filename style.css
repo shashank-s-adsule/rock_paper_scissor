@@ -9,7 +9,7 @@
 }
 
 p{
-    color: white;
+    color: var(--text_color);
     font-weight: bold;
 }
 
@@ -25,7 +25,19 @@ body{
 header{
     background-color: var(--header_bg);
     display: flex;
-
+    
+    .nav
+    {
+        color: black;
+    }
+    .COLOR_MODE
+    {
+        #color_options
+        {
+            border: none;
+            /* background-color: var(--display_bg); */
+        }
+    }
     .BG_MODE
     {
         color: black;
@@ -47,7 +59,7 @@ header{
 .display
 {
     background-color: var(--display_bg);
-    margin: 100px 50px 100px 50px;
+    margin: 100px 50px 40px 50px;                  /*top left bottem right*/
     /* padding-top: 250px; */
     display: flex;
     justify-content: space-around;
@@ -138,4 +150,15 @@ header{
             font-weight: bold;
             border-radius:0.35cm;
         }
+}
+
+.instruction
+{
+    padding-left: 50px;
+    #head
+    {
+        color: var(--text_color);
+        text-align: center;
+        font-size: 125%;
+    }
 }
