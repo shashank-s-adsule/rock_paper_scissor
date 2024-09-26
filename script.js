@@ -94,18 +94,18 @@ document.querySelectorAll("#user_choice").forEach(button =>{
         let curr=`\t${cnt}.\t\tuser: ${choices[x]}\t\t\t\t\tComputer: ${choices[computer_option]}\n`;
         let process_tab_area=document.getElementById("process_tab");
 
-        if(x==computer_option)  {document.getElementById("output").innerHTML="draw";}
+        if(x==computer_option)  {document.getElementById("output").innerHTML="Draw";}
         else if((computer_option==0 && x==2) ||(computer_option==1 && x==0) ||(computer_option==2 && x==1))
         {
             computer_cnt+=1
             document.getElementById("computer").innerHTML=computer_cnt;
-            document.getElementById("output").innerHTML="computer won";
+            document.getElementById("output").innerHTML="Computer won";
         }
         else
         {
             user_cnt+=1
             document.getElementById("user").innerHTML=user_cnt;
-            document.getElementById("output").innerHTML="user won";
+            document.getElementById("output").innerHTML="User won";
         }
 
         process_tab_area.innerHTML=curr+process_tab_area.innerHTML;
