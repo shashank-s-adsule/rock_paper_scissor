@@ -35,7 +35,9 @@ header{
         #color_options
         {
             border: none;
-            /* background-color: var(--display_bg); */
+            font-weight: bold;
+            background-color: var(--display_bg);
+            color: var(--text_color);
         }
     }
     .BG_MODE
