@@ -86,7 +86,7 @@ document.getElementById("bg_change").onclick=function()
 let user_cnt=0, computer_cnt=0,cnt=1;                                 // 0->rock ,1->paper, 2->scissor
 let choices={0:"Rock",1:"Paper",2:"Scissor"};
 
-document.querySelectorAll("#user_choice").forEach(button =>{                        
+document.querySelectorAll(".user_choice").forEach(button =>{                        
     button.onclick= function()
     {
         let computer_option= (Math.floor(Math.random()*100))%3;
@@ -122,3 +122,18 @@ document.getElementById("reset").onclick=function()
     document.getElementById("output").innerHTML="";
     document.getElementById("process_tab").innerHTML="";
 }
+
+// key binding function
+document.addEventListener("keydown",function(event){
+    let key=event.key.toLowerCase();
+
+    let keymap={"1":0,"2":1,"3":2}
+    if(key in keymap)
+    {
+        document.querySelectorAll(".user_choice")[keymap[key]].click()
+    }
+    else if(key==="r")
+    {
+        document.getElementById("reset").click()
+    }
+});
