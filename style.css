@@ -163,7 +163,6 @@ header{
             display: flex;
             .reset{
                 font-size: larger;
-                color: red;
             }
         }
     }
