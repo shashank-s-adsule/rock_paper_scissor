@@ -12,7 +12,7 @@ const color_map_fun=(bg_color)=>
 document.getElementById("color_options").addEventListener("change",function()
 {
     bg_color=this.value;
-    let image_element=document.querySelectorAll("#user_choice img");
+    let image_element=document.querySelectorAll(".user_choice img");
     
     switch(bg_color)
     {
